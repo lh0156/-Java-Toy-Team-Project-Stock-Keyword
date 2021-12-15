@@ -53,7 +53,6 @@ public class Check {
 		for(String s :CreateMap.map.keySet()) {
 			if(CreateMap.map.get(s)==max) {
 				resultMap.put(keyword, s);
-				System.out.println(s);
 			}
 		}
 	}
