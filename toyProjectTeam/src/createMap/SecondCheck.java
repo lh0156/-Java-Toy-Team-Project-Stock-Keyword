@@ -5,7 +5,6 @@ public class SecondCheck {
 	public static Object SecondCheck() {
 		int equalsCount = 0;
 		int indexNumber = -1;
-
 		
 		Check.checkKeyword();
 		
