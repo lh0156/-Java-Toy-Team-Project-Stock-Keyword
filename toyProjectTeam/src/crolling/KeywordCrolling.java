@@ -15,16 +15,22 @@ public class KeywordCrolling {
 	private static Elements body;
 	public static List<String> keyword = new ArrayList<String>();
 	
-	public KeywordCrolling(){
+//	public KeywordCrolling(){
+//		try {
+//			doc = Jsoup.connect(issunowUrl).get();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		crolling();
+//	}
+
+	public static void crolling() {
 		try {
 			doc = Jsoup.connect(issunowUrl).get();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		crolling();
-	}
-
-	private static void crolling() {
+		
 		body = doc.select("a.animate__animated");
 		int count =0;
 		for(Element e : body) {
