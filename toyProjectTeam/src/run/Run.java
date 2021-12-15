@@ -10,6 +10,6 @@ public class Run {
 		Check.checkKeyword();
 		System.out.println(Check.resultMap);
 //		StockCrolling.getStocData("대구방송");
-//		System.out.println(Stoc.getName()+"\n"+Stoc.getPreviousClose());
+//		System.out.println(Stoc.getName()+"\n"+Stoc.getPreviousClose());dsf
 	}
 }
