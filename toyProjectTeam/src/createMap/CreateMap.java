@@ -23,4 +23,10 @@ public class CreateMap {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void clearValue(){
+	      for(String s : map.keySet()) {
+	         map.put(s, 0);
+	      }
+	   }
 }
