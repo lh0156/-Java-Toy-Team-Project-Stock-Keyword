@@ -10,7 +10,7 @@ import createMap.CreateMap;
 
 public class Check {
 	private static String url = "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=";
-	private static String addUrl = "+°ü·ÃÁÖ";
+	private static String addUrl = "+ê´€ë ¨ì£¼ì‹";
 	public static Map<String,String> resultMap = new HashMap<String,String>();
 	
 	public Check() {

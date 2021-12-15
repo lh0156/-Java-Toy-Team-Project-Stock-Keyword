@@ -7,15 +7,7 @@ import java.util.HashMap;
 public class CreateMap {
 
 	public static HashMap<String,Integer> map;
-	private static String path = ".\\test.txt";
-	
-//	public CreateMap(){
-//		try {
-//			getMap();
-//		}catch(Exception e){
-//			e.printStackTrace();
-//		}
-//	}
+	private static String path = ".\\신규상장기업현황.txt";
 	
 	public static void getMap() {
 		map = new HashMap<String,Integer>();

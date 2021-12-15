@@ -14,15 +14,6 @@ public class KeywordCrolling {
 	private static Document doc=null;
 	private static Elements body;
 	public static List<String> keyword = new ArrayList<String>();
-	
-//	public KeywordCrolling(){
-//		try {
-//			doc = Jsoup.connect(issunowUrl).get();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		crolling();
-//	}
 
 	public static void crolling() {
 		try {
