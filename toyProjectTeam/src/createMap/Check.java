@@ -13,7 +13,7 @@ public class Check {
 	private static String addUrl = "+관련주식";
 	public static Map<String, String> resultMap;
 
-	public static void checkKeyword() {
+	public static Object checkKeyword() {
 		
 		resultMap = new HashMap<String, String>();
 		
@@ -24,8 +24,9 @@ public class Check {
 				count(txt, KeywordCrolling.keyword.get(i));
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			return SecondCheck.SecondCheck();
 		}
+		return "check";
 	}
 
 	private static void count(String txt, String keyword) {
