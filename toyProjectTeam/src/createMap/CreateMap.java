@@ -7,9 +7,10 @@ import java.util.HashMap;
 public class CreateMap {
 
 	public static HashMap<String,Integer> map;
-	private static String path = ".\\신규상장기업현황.txt";
 	
 	public static void getMap() {
+		String path = ".\\신규상장기업현황.txt";
+		
 		map = new HashMap<String,Integer>();
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(path));

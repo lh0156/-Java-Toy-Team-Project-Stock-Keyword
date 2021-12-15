@@ -6,12 +6,14 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class StockCrolling {
-	private static String url ="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=";
-	private static String addUrl="+주가";
-	private static Document html;
-	private static Elements sel;
 	
 	public static void getStocData(String stocName) {
+		
+		String url ="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=";
+		String addUrl="+주가";
+		Document html;
+		Elements sel;
+		
 		Stoc.setName(stocName);
 		try {
 			html = Jsoup.connect(url+stocName+addUrl).get();

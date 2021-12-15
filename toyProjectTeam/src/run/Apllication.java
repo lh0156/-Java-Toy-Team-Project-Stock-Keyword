@@ -7,15 +7,17 @@ import crolling.KeywordCrolling;
 import crolling.Stoc;
 import crolling.StockCrolling;
 
-public class Run {
+public class Apllication {
 
 	public static void main(String[] args) {
 		
+		System.out.println("test Massage");
 		KeywordCrolling.crolling();
-		
 		
 		CreateMap.getMap();
 		SecondCheck.SecondCheck();
+		
+		System.out.println("완료 되었습니다");
 		
 		
 	}

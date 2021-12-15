@@ -9,27 +9,29 @@ import org.jsoup.nodes.Document;
 import crolling.KeywordCrolling;
 
 public class Check {
-	private static String url = "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=";
-	private static String addUrl = "+관련주식";
 	public static Map<String, String> resultMap;
 
-	public static void checkKeyword() {
+	public static Object checkKeyword() {
+		
+		String url = "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=";
+		String addUrl = "+관련주식";
 		
 		resultMap = new HashMap<String, String>();
-		StringBuilder txt = new StringBuilder();
 		
 		try {
 			for (int i = 0; i < KeywordCrolling.keyword.size(); i++) {
 				Document d = Jsoup.connect(url + KeywordCrolling.keyword.get(i) + addUrl).get();
-				txt.append(d.toString());
+				String txt = d.toString();
 				count(txt, KeywordCrolling.keyword.get(i));
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			return SecondCheck.SecondCheck();
 		}
+		
+		return "Last";
 	}
 
-	private static void count(StringBuilder txt, String keyword) {
+	private static void count(String txt, String keyword) {
 
 		for (String key : CreateMap.map.keySet()) {
 			int index = -1;

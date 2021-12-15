@@ -23,7 +23,7 @@ public class SecondCheck {
 			}
 		}
 		
-		return "last";
+		return "파일 삭제가 완료되었습니다";
 		
 	}
 }
