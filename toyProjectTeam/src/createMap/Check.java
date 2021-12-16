@@ -9,22 +9,19 @@ import org.jsoup.nodes.Document;
 import crolling.KeywordCrolling;
 
 public class Check {
-	private static String url = "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=";
-	private static String addUrl = "+관련주식";
 	public static Map<String, String> resultMap;
 
 	public static Object checkKeyword() {
+		String url = "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=";
+		String addUrl = "+관련주식";
 		
 		resultMap = new HashMap<String, String>();
 		
 		try {
 			for (int i = 0; i < KeywordCrolling.keyword.size(); i++) {
 				Document d = Jsoup.connect(url + KeywordCrolling.keyword.get(i) + addUrl).get();
-<<<<<<< HEAD
 				String txt = d.toString();
-=======
-				String txt=d.body().text();
->>>>>>> Feature#1
+				
 				count(txt, KeywordCrolling.keyword.get(i));
 			}
 		} catch (Exception e) {
@@ -50,7 +47,6 @@ public class Check {
 				max = CreateMap.map.get(s);
 			}
 		}
-		System.out.println(max);
 		if(max!=0) {
 			for (String s : CreateMap.map.keySet()) {
 				if (CreateMap.map.get(s) == max) {
@@ -58,7 +54,7 @@ public class Check {
 				}
 			}
 		}else {
-			resultMap.put(keyword, null);
+			resultMap.put(keyword, "not");
 		}
 		CreateMap.clearValue();
 	}

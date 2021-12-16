@@ -3,20 +3,13 @@ package createMap;
 public class SecondCheck {
 
 	public static Object SecondCheck() {
-<<<<<<< HEAD
-		int equalsCount = 0;
-		int indexNumber = -1;
-=======
-		
-		
->>>>>>> Feature#1
 		
 		Check.checkKeyword();
 		
 		for (String s : Check.resultMap.keySet()) { // 20번 20번 다 솎아낸 후의 CreateMap을 가지고 다시  ex:) 
 			int equalsCount = 0;
 			int indexNumber = -1;
-			if(Check.resultMap.get(s)!=null) {
+			if(!Check.resultMap.get(s).equals("not")) {
 				while (Check.resultMap.toString().indexOf(Check.resultMap.get(s), indexNumber) != -1) {
 					indexNumber = Check.resultMap.toString().indexOf(Check.resultMap.get(s), indexNumber) + Check.resultMap.get(s).length() + 1;
 					equalsCount++;
@@ -28,12 +21,8 @@ public class SecondCheck {
 				System.out.printf("후:%d \r\n",CreateMap.map.size());
 				return SecondCheck();
 				}
-			}else {
-				continue;
 			}
 		}
-		
 		return "last";
-		
 	}
 }
