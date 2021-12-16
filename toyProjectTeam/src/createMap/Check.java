@@ -16,12 +16,11 @@ public class Check {
 	public static void checkKeyword() {
 		
 		resultMap = new HashMap<String, String>();
-		StringBuilder txt = new StringBuilder();
 		
 		try {
 			for (int i = 0; i < KeywordCrolling.keyword.size(); i++) {
 				Document d = Jsoup.connect(url + KeywordCrolling.keyword.get(i) + addUrl).get();
-				txt.append(d.toString());
+				String txt=d.body().text();
 				count(txt, KeywordCrolling.keyword.get(i));
 			}
 		} catch (Exception e) {
@@ -29,7 +28,7 @@ public class Check {
 		}
 	}
 
-	private static void count(StringBuilder txt, String keyword) {
+	private static void count(String txt, String keyword) {
 
 		for (String key : CreateMap.map.keySet()) {
 			int index = -1;
@@ -46,10 +45,15 @@ public class Check {
 				max = CreateMap.map.get(s);
 			}
 		}
-		for (String s : CreateMap.map.keySet()) {
-			if (CreateMap.map.get(s) == max) {
-				resultMap.put(keyword, s);
+		System.out.println(max);
+		if(max!=0) {
+			for (String s : CreateMap.map.keySet()) {
+				if (CreateMap.map.get(s) == max) {
+					resultMap.put(keyword, s);
+				}
 			}
+		}else {
+			resultMap.put(keyword, null);
 		}
 		CreateMap.clearValue();
 	}

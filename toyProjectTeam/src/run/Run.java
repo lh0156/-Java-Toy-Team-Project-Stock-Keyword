@@ -16,7 +16,8 @@ public class Run {
 		
 		CreateMap.getMap();
 		SecondCheck.SecondCheck();
-		
+		System.out.println(Check.resultMap.toString());
+		System.out.println("완료");
 		
 	}
 }
