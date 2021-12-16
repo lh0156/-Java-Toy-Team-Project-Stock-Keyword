@@ -4,7 +4,7 @@ import createMap.Check;
 import createMap.CreateMap;
 import createMap.SecondCheck;
 import crolling.KeywordCrolling;
-import crolling.Stoc;
+import crolling.StockMarketPrice;
 import crolling.StockCrolling;
 
 public class Apllication {
@@ -15,10 +15,13 @@ public class Apllication {
 		KeywordCrolling.crolling();
 		
 		CreateMap.getMap();
-		SecondCheck.SecondCheck();
+		
+		Check.checkKeyword();
+		System.out.println(Check.txt.length());
+		
 		
 		System.out.println("완료 되었습니다");
 		
-		
+		System.out.println(Check.resultMap);
 	}
 }

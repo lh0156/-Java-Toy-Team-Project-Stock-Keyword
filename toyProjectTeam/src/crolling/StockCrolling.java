@@ -14,7 +14,7 @@ public class StockCrolling {
 		Document html;
 		Elements sel;
 		
-		Stoc.setName(stocName);
+		StockMarketPrice.setName(stocName);
 		try {
 			html = Jsoup.connect(url+stocName+addUrl).get();
 			sel = html.select("div.ar_cont dt,dd");
@@ -22,7 +22,7 @@ public class StockCrolling {
 			for(Element e : sel) {
 				sb.append(e.toString());
 			}
-			Stoc.setPreviousClose(((sb.substring(sb.indexOf("전일종가")+15).substring(0,(sb.substring(sb.indexOf("전일종가")+15).indexOf("\n"))))).trim());
+			StockMarketPrice.setPreviousClose(((sb.substring(sb.indexOf("전일종가")+15).substring(0,(sb.substring(sb.indexOf("전일종가")+15).indexOf("\n"))))).trim());
 		}catch(Exception e){
 			e.printStackTrace();
 		}
