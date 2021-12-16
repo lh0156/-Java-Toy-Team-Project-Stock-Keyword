@@ -12,6 +12,11 @@ public class Run {
 		
 		CreateMap.getMap();
 		SecondCheck.SecondCheck();
+<<<<<<< HEAD
+=======
+		System.out.println(Check.resultMap.toString());
+		System.out.println("완료");
+>>>>>>> Feature#1
 		
 	}
 }

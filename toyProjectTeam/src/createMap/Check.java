@@ -20,7 +20,11 @@ public class Check {
 		try {
 			for (int i = 0; i < KeywordCrolling.keyword.size(); i++) {
 				Document d = Jsoup.connect(url + KeywordCrolling.keyword.get(i) + addUrl).get();
+<<<<<<< HEAD
 				String txt = d.toString();
+=======
+				String txt=d.body().text();
+>>>>>>> Feature#1
 				count(txt, KeywordCrolling.keyword.get(i));
 			}
 		} catch (Exception e) {
@@ -46,10 +50,15 @@ public class Check {
 				max = CreateMap.map.get(s);
 			}
 		}
-		for (String s : CreateMap.map.keySet()) {
-			if (CreateMap.map.get(s) == max) {
-				resultMap.put(keyword, s);
+		System.out.println(max);
+		if(max!=0) {
+			for (String s : CreateMap.map.keySet()) {
+				if (CreateMap.map.get(s) == max) {
+					resultMap.put(keyword, s);
+				}
 			}
+		}else {
+			resultMap.put(keyword, null);
 		}
 		CreateMap.clearValue();
 	}
