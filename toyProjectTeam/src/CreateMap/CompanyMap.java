@@ -1,10 +1,10 @@
-package createMap;
+package CreateMap;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 
-public class CreateMap {
+public class CompanyMap {
 
 	public static HashMap<String,Integer> map;
 	

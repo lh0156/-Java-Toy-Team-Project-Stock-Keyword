@@ -1,4 +1,4 @@
-package createMap;
+package CreateMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,9 +6,10 @@ import java.util.Map;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import crolling.KeywordCrolling;
+import Calculate.SecondCheck;
+import Crolling.KeywordCrolling;
 
-public class Check {
+public class resultMap {
    public static Map<String, String> resultMap;
    public static String txt = "";
    public static Object checkKeyword() {
@@ -41,31 +42,31 @@ public class Check {
 
    private static void count(String txt, String keyword) {
 
-      for (String key : CreateMap.map.keySet()) {
+      for (String key : CompanyMap.map.keySet()) {
          int index = -1;
          int count = 0;
          while (txt.indexOf(key, index) != -1) {
             index = txt.indexOf(key, index) + key.length() + 1;
             count++;
          }
-         CreateMap.map.put(key, count);
+         CompanyMap.map.put(key, count);
       }
       int max = 0;
-      for (String s : CreateMap.map.keySet()) {
-         if (CreateMap.map.get(s) > max) {
-            max = CreateMap.map.get(s);
+      for (String s : CompanyMap.map.keySet()) {
+         if (CompanyMap.map.get(s) > max) {
+            max = CompanyMap.map.get(s);
          }
       }
       if(max!=0) {
-         for (String s : CreateMap.map.keySet()) {
-            if (CreateMap.map.get(s) == max) {
+         for (String s : CompanyMap.map.keySet()) {
+            if (CompanyMap.map.get(s) == max) {
                resultMap.put(keyword, s);
             }
          }
       }else {
          resultMap.put(keyword, "not");
       }
-      CreateMap.clearValue();
+      CompanyMap.clearValue();
    }
 
 }
