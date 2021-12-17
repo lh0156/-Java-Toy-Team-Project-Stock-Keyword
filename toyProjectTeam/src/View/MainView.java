@@ -56,7 +56,7 @@ public class MainView {
 		for (String key : resultMap.resultMap.keySet()) {
 			String company = resultMap.resultMap.get(key); // 회사명 담아준다.
 			System.out.printf("|\t\t\t\t현재 실시간 검색어 %2d 위 : %-50s\t\t\t|\r\n",count,key);
-			if(resultMap.resultMap.get(key).equals("not")) {
+			if(!resultMap.resultMap.get(key).equals("not")) {
 				checkCompany++;
 			}
 			count++;
@@ -90,7 +90,30 @@ public class MainView {
 	}
 	
 	private Object printNowStockData() {
-		
+		System.out.println("███████ ████████  ██████   ██████ ██   ██                                                   \r\n"
+				+ "██         ██    ██    ██ ██      ██  ██                                                    \r\n"
+				+ "███████    ██    ██    ██ ██      █████                                                     \r\n"
+				+ "     ██    ██    ██    ██ ██      ██  ██                                                    \r\n"
+				+ "███████    ██     ██████   ██████ ██   ██                                                   \r\n"
+				+ "                                                                                            \r\n"
+				+ "                                                                                            \r\n"
+				+ "    ██ ███    ██ ███████  ██████  ██████  ███    ███  █████  ████████ ██  ██████  ███    ██ \r\n"
+				+ "    ██ ████   ██ ██      ██    ██ ██   ██ ████  ████ ██   ██    ██    ██ ██    ██ ████   ██ \r\n"
+				+ "    ██ ██ ██  ██ █████   ██    ██ ██████  ██ ████ ██ ███████    ██    ██ ██    ██ ██ ██  ██ \r\n"
+				+ "    ██ ██  ██ ██ ██      ██    ██ ██   ██ ██  ██  ██ ██   ██    ██    ██ ██    ██ ██  ██ ██ \r\n"
+				+ "    ██ ██   ████ ██       ██████  ██   ██ ██      ██ ██   ██    ██    ██  ██████  ██   ████ \r\n"
+				+ "                                                                                            \r\n"
+				+ "                                                                                            ");
+		printLine();
+		System.out.printf("|\t실검\t\t회사명\t\t\t주가\t\t전일대비\t\t수익률\t시가\t\t저가\t\t고가\t|\r\n");
+		printLine();
+		int count=1;
+		for (String key : resultMap.resultMap.keySet()) {
+			if(!resultMap.resultMap.get(key).equals("not")) {
+				System.out.printf("| %2d  %-15s\t%-10s\t|\r\n",count,key,resultMap.resultMap.get(key));
+				count++;
+			}
+		}
 		return null;
 	}
 
