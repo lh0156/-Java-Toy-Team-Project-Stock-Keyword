@@ -1,6 +1,7 @@
 package MemberClass;
 
 public class StockIndex {
+	
 	private String name = ""; // 회사이름
 	private String eps;
 	private String bps;
