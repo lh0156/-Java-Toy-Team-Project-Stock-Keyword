@@ -1,7 +1,8 @@
 package MemberClass;
 
 public class StockPriceToday {
-
+	
+	private String companyName ="";//TODO 이름 추가
 	private String stockPrice = ""; // 주가
 	private String yesterdayPrice = ""; // 전일 주가
 	private String rateYesterday = ""; // 전일대비 수익률 ex: 0.26~%
@@ -14,6 +15,13 @@ public class StockPriceToday {
 	private String maximumPrice = ""; // 최고 상한가
 	private String minimumPrice = ""; // 최저 하한가
 
+	public String getCompanyName() {//TODO 이름 추가
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {//TODO 이름 추가
+		this.companyName = companyName;
+	}
 	public String getStockPrice() {
 		return stockPrice;
 	}

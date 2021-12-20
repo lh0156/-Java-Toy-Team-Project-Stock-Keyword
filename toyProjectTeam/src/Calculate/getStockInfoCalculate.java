@@ -11,10 +11,7 @@ public class getStockInfoCalculate { // Stock
 
 	public ArrayList<StockMarketPrice> StockPrices = new ArrayList<StockMarketPrice>();
 	public ArrayList<StockIndex> StockIndex = new ArrayList<StockIndex>();
-<<<<<<< HEAD
-=======
 	public ArrayList<StockPriceToday> StockPriceToday = new ArrayList<StockPriceToday>();
->>>>>>> Feature#1
 
 	public void getStockCalculate() {
 
@@ -110,24 +107,6 @@ public class getStockInfoCalculate { // Stock
 		startIndex = text.lastIndexOf("PER") + 4;
 		stocIndex.setPer(text.substring(text.lastIndexOf("PER") + 4).substring(0,
 				text.substring(text.lastIndexOf("PER") + 4).indexOf(" ")));
-<<<<<<< HEAD
-
-		lastIndex = 0;
-		startIndex = text.lastIndexOf("동일업종 PER") + 9;
-		stocIndex.setBusinessPer((text.substring(text.lastIndexOf("동일업종 PER") + 9)).substring(0,
-				(text.substring(text.lastIndexOf("동일업종 PER") + 9)).indexOf(" ")));
-
-		lastIndex = 0;
-		startIndex = text.indexOf("현재가") + 4;
-		stocIndex.setPbr(String.format("%.2f",
-				(Double.parseDouble(text.substring(text.indexOf("현재가") + 4)
-						.substring(0, (text.substring(text.indexOf("현재가") + 4).indexOf(" "))).replaceAll(",", "")))
-						/ (Double.parseDouble(stocIndex.getBps().replaceAll("[, 원]", "")))));
-
-		stocIndex.setName(companyName);
-
-		StockIndex.add(stocIndex);
-=======
 
 		lastIndex = 0;
 		startIndex = text.lastIndexOf("동일업종 PER") + 9;
@@ -152,6 +131,8 @@ public class getStockInfoCalculate { // Stock
 		int startIndex = 0;
 		int lastIndex = 0;
 		String scText = "";
+		
+		stockPriceToday.setCompanyName(company);//TODO 회사 이름 입력
 
 		startIndex = text.indexOf("오늘의시세") + 6;// 주가
 		scText = text.substring(startIndex);
@@ -194,11 +175,13 @@ public class getStockInfoCalculate { // Stock
 		scText = scText.substring(0, lastIndex);
 		lastIndex = scText.lastIndexOf(" ");
 		scText = scText.substring(0, lastIndex);
+		stockPriceToday.setPreviousday(scText);//TODO set 추가
 
 		startIndex = text.indexOf("거래량 ") + 4;// 거래량
 		scText = text.substring(startIndex);
 		lastIndex = scText.indexOf(" ");
 		scText = scText.substring(0, lastIndex);
+		stockPriceToday.setTradingVolume(scText);//TODO set 추가
 
 		startIndex = text.indexOf("거래대금 ") + 6;// 거래대금
 		scText = text.substring(startIndex);
@@ -231,8 +214,6 @@ public class getStockInfoCalculate { // Stock
 		stockPriceToday.setMinimumPrice(scText);
 
 		StockPriceToday.add(stockPriceToday);
-
->>>>>>> Feature#1
 	}
 
 }
