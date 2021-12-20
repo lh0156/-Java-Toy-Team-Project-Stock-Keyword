@@ -11,6 +11,7 @@ public class test {
 		String text = Crolling.StockCrolling.getStocData(company);
 
 		System.out.println(text);
+<<<<<<< HEAD
 
 //		int startIndex = 0;
 //		int lastIndex = 0;
@@ -31,5 +32,21 @@ public class test {
 
 
 
+=======
+
+		int startIndex = 0;
+		int lastIndex = 0;
+		String scText = "";
+		
+		
+		startIndex = text.indexOf("하한가 ") + 4;//최저 하한가(이 주식의 가장 저점)
+		scText = text.substring(startIndex);
+		lastIndex = scText.indexOf(" ");
+		scText= scText.substring(0, lastIndex);
+		
+		
+		System.out.println(scText);
+
+>>>>>>> Feature#1
 	}
 }
