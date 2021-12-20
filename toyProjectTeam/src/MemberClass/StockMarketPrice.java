@@ -1,9 +1,10 @@
 package MemberClass;
 
 public class StockMarketPrice {
+	
 	private String name = ""; // 회사이름
 	private String stockPrice = ""; // 전일주가
-	private String previousDay = ""; // 전일대비
+	private String previousDay = ""; // 전일대비 ex: 하락 800
 	private String rateYesterDay = ""; // 전일대비수익률
 	private String weekMaximum = ""; // 주 최고
 	private String weekMinimum = ""; // 주 최저
