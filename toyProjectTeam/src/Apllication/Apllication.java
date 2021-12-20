@@ -11,7 +11,6 @@ public class Apllication {
 	public static void main(String[] args) {
 		try {
 
-			System.out.println("test Massage");
 			KeywordCrolling.crolling();// 키워드
 
 			CompanyMap.getMap();// 회사 정보(최초)

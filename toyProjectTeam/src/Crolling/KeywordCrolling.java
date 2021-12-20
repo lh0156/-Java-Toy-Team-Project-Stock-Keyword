@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 
 public class KeywordCrolling {
 
-	private static String issunowUrl = "https://issuenow.vercel.app/";
+	private static String issunowUrl = "https://issuenow.vercel.app";
 	private static Document doc=null;
 	private static Elements body;
 	public static List<String> keyword = new ArrayList<String>();
@@ -30,8 +30,9 @@ public class KeywordCrolling {
 			String word = s.substring((s.indexOf('>')+1),s.length()-4);
 			keyword.add(word);
 			count++;
-		}
-	}
-}
-
-
+		}  
+	}      
+}          
+           
+           
+           
